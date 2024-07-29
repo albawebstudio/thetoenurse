@@ -47,7 +47,10 @@ export default {
         'Segoe UI Emoji',
         'Segoe UI Symbol',
         'Noto Color Emoji'
-      ]
+      ],
+      'squada-one': [
+          'Squada One',
+      ],
     }
   },
   plugins: [],
