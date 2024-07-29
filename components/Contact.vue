@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 
+const phone = ref('+16516660143')
+const phone_formatted = ref('(651) 666-0143')
 </script>
 
 <template>
@@ -35,7 +38,7 @@
             </div>
             <p class="font-semibold text-lg dark:text-white">Company information:</p>
           </div>
-          <p class="text-gray-500 dark:gray-400">The Toe Nurse LLC <br>Tax id: USXXXXXX</p>
+          <p class="text-gray-500 dark:gray-400">The Toe Nurse LLC</p>
 
           <div class="flex flex-col items-center space-x-2">
             <div class="flex flex-col items-center justify-center w-10 h-10 bg-blue-500 rounded-full">
@@ -43,7 +46,7 @@
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <p class="font-semibold text-lg dark:text-white">Address:</p>
+            <p class="font-semibold text-lg dark:text-white">Location:</p>
           </div>
           <p class="text-gray-500 dark:text-gray-400">Fridley, MN 55432</p>
 
@@ -56,7 +59,7 @@
             <p class="font-semibold text-lg dark:text-white">Call us:</p>
           </div>
           <p class="text-gray-500 dark:text-gray-400">Call us! We are always happy to help.</p>
-          <p class="text-primary-600 dark:te  xt-primary-500">+1 (646) 786-5060</p>
+          <p class="text-primary-600 dark:te  xt-primary-500"><NuxtLink :to="'tel:' + phone">{{phone_formatted}}</NuxtLink></p>
         </div>
       </div>
     </div>
