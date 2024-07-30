@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useSiteData } from "~/composables/useSiteData"
 
-const phone = ref('+16516660143')
-const phone_formatted = ref('(651) 666-0143')
+const { address, phone, metaData } = useSiteData()
 </script>
 
 <template>
@@ -38,7 +37,7 @@ const phone_formatted = ref('(651) 666-0143')
             </div>
             <p class="font-semibold text-lg dark:text-white">Company information:</p>
           </div>
-          <p class="text-gray-500 dark:gray-400">The Toe Nurse LLC</p>
+          <p class="text-gray-500 dark:gray-400">{{ metaData.legalName }}</p>
 
           <div class="flex flex-col items-center space-x-2">
             <div class="flex flex-col items-center justify-center w-10 h-10 bg-blue-500 rounded-full">
@@ -48,7 +47,7 @@ const phone_formatted = ref('(651) 666-0143')
             </div>
             <p class="font-semibold text-lg dark:text-white">Location:</p>
           </div>
-          <p class="text-gray-500 dark:text-gray-400">Fridley, MN 55432</p>
+          <p class="text-gray-500 dark:text-gray-400">{{ address.city }}, {{ address.state }} {{ address.zip }}</p>
 
           <div class="flex flex-col items-center space-x-2">
             <div class="flex flex-col items-center justify-center w-10 h-10 bg-blue-500 rounded-full">
@@ -59,7 +58,7 @@ const phone_formatted = ref('(651) 666-0143')
             <p class="font-semibold text-lg dark:text-white">Call us:</p>
           </div>
           <p class="text-gray-500 dark:text-gray-400">Call us! We are always happy to help.</p>
-          <p class="text-primary-600 dark:te  xt-primary-500"><NuxtLink :to="'tel:' + phone">{{phone_formatted}}</NuxtLink></p>
+          <p class="text-primary-600 dark:te  xt-primary-500"><NuxtLink :to="'tel:' + phone.value">{{phone.formatted}}</NuxtLink></p>
         </div>
       </div>
     </div>

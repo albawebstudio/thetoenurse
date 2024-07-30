@@ -1,6 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useColorMode } from '@vueuse/core'
+import { useSiteData } from "~/composables/useSiteData"
 
+const { metaData } = useSiteData()
+
+const colorMode = useColorMode()
+const logoSrc = ref('/logo-navigation-light.svg')
+
+onMounted(() => {
+  logoSrc.value = colorMode.value === 'dark' ? '/logo-navigation-dark.svg' : '/logo-navigation-light.svg'
+})
 const showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);
 </script>
@@ -10,8 +20,8 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
     <nav>
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NuxtLink to="https://thetoenurse.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/logo-navigation.svg" class="h-8" alt="The Toe Nurse Logo" />
-          <span class="self-center text-4xl font-semibold whitespace-nowrap dark:text-white font-squada-one">The Toe Nurse</span>
+          <NuxtImg :src="logoSrc" class="h-8" alt="The Toe Nurse logo" />
+          <span class="self-center text-4xl font-semibold whitespace-nowrap dark:text-white font-squada-one">{{ metaData.title }}</span>
         </NuxtLink>
         <button @click="toggleNav" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -54,5 +64,7 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
 </template>
 
 <style scoped>
-
+.dark-mode .logo-img {
+  content: url('/logo-full-dark.svg');
+}
 </style>
