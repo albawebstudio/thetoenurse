@@ -1,112 +1,111 @@
 <script setup lang="ts">
+import Testimonial from "~/components/default/Testimonial.vue";
+const testimonials = ref([
+  {
+    "id": 1,
+    "rating": "4.0",
+    "content": "I was a little nervous about getting my feet taken care of, but Tricia made it such a breeze! As a young guy in my 20s, I wasn't sure what to expect, but Tricia was so professional and friendly that I felt right at home. She even met me at a neutral location, which was super convenient for me. The foot care service itself was amazing - it was so relaxing and refreshing. I left feeling like I was walking on clouds! I'm definitely planning on scheduling another appointment with Tricia soon. If you're looking for a foot care specialist who knows how to make you feel comfortable and taken care of, Tricia is the way to go!",
+    "author": "Rafael Cormier",
+    "image": "michelle-and-andrew.jpg",
+    "location": "Plainfield, MN"
+  },
+  {
+    "id": 2,
+    "rating": "5.0",
+    "content": "I am extremely grateful to Tricia for the exceptional foot care services she provided to my father. He was unable to take care of his own feet due to his medical condition, but Tricia was patient and understanding throughout the entire process. She went above and beyond to ensure that my father was comfortable and well-cared for, and her expertise and professionalism were evident in every aspect of her work. I highly recommend Tricia to anyone in need of foot care services. Thank you, Tricia, for everything you do!",
+    "author": "Kailey Reinger",
+    "image": "michelle-and-andrew.jpg",
+    "location": "Grand Junction, MN"
+  },
+  {
+    "id": 3,
+    "rating": "5.0",
+    "content": "I never thought getting my feet taken care of could be so much fun! Tricia is the best foot care specialist out there! As a middle-aged guy, I was a little nervous about getting my feet touched, but Tricia made me feel so comfortable and at ease. I had some concerns about a possible fungus on my toe, but Tricia took care of it painlessly and quickly. We had such a great conversation during the appointment that I almost forgot I was getting my feet taken care of! I'm so grateful for Tricia's foot care service and would recommend her to anyone who wants to have a good time while taking care of their feet!",
+    "author": "Nick Boyle",
+    "image": "michelle-and-andrew.jpg",
+    "location": "Evanston, MN"
+  },
+
+  {
+    "id": 4,
+    "rating": "5.0",
+    "content": "My grandma and I had the best time getting our feet taken care of by Tricia! She came to our home, which made the experience even more comfortable and convenient. We loved sharing the foot care service together - it was such a fun bonding experience for us! Tricia was so friendly and professional, and she really knows her stuff. We left feeling pampered and refreshed, and we're already planning on scheduling another appointment - maybe we'll even add more family members next time! If you're looking for a foot care specialist who can bring the fun to your home, Tricia is the one to call!",
+    "author": "Eloise Murphy",
+    "image": "michelle-and-andrew.jpg",
+    "location": "Middletown, MN"
+  }
+]);
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-fade'
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// Import required modules
+import { Pagination, Navigation, EffectFade } from 'swiper/modules';
+
+// Define modules to be used
+const modules = [Pagination, Navigation, EffectFade];
 
 </script>
 
 <template>
-  <div id="testimonials" class="relative w-full bg-white dark:bg-gray-900" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-      <!-- Item 1 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <figure class="bg-white dark:bg-gray-900 max-w-screen-md mx-auto text-center my-6">
-          <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-            <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-          </svg>
-          <blockquote>
-            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-          </blockquote>
-          <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-            <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-            <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-              <cite class="pe-3 font-medium text-gray-900 dark:text-white">Michael Gough</cite>
-              <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
-            </div>
-          </figcaption>
-        </figure>
+  <section id="testimonials" class="bg-white dark:bg-gray-900 py-24 ">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-16">
+        <span class="text-sm text-gray-600 dark:text-gray-400 font-medium text-center block mb-2 uppercase">Testimonial</span>
+        <h2 class="text-4xl text-center font-bold text-gray-700 dark:text-gray-300">What our happy user says!</h2>
       </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <figure class="bg-white dark:bg-gray-900 max-w-screen-md mx-auto text-center my-6">
-          <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-            <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-          </svg>
-          <blockquote>
-            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-          </blockquote>
-          <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-            <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-            <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-              <cite class="pe-3 font-medium text-gray-900 dark:text-white">Michael Gough</cite>
-              <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <figure class="bg-white dark:bg-gray-900 max-w-screen-md mx-auto text-center my-6">
-          <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-            <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-          </svg>
-          <blockquote>
-            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-          </blockquote>
-          <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-            <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-            <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-              <cite class="pe-3 font-medium text-gray-900 dark:text-white">Michael Gough</cite>
-              <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <figure class="bg-white dark:bg-gray-900 max-w-screen-md mx-auto text-center my-6">
-          <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-            <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-          </svg>
-          <blockquote>
-            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-          </blockquote>
-          <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-            <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-            <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-              <cite class="pe-3 font-medium text-gray-900 dark:text-white">Michael Gough</cite>
-              <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
+      <!--Slider wrapper-->
+      <Swiper
+          :modules="modules"
+          :slides-per-view="1"
+          :spaceBetween="30"
+          :navigation="true"
+          :pagination="{
+            clickable: true,
+          }"
+          :autoplay="{
+            delay: 8000,
+            disableOnInteraction: true,
+          }"
+          :autoHeight="true"
+          class="w-2/3"
+      >
+        <SwiperSlide v-for="testimonial in testimonials" :key="testimonial.id">
+          <Testimonial :testimonial="testimonial" />
+        </SwiperSlide>
+      </Swiper>
     </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-    </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
-  </div>
+  </section>
 
 </template>
 
 <style scoped>
-
+:global(:root) {
+  --swiper-pagination-bullet-inactive-color: #9ca3af;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-color: #007aff;
+  --swiper-theme-color: #007aff;
+  --swiper-navigation-color: #007aff;
+}
+:global(.swiper-pagination-bullet) {
+  background-color: var(--swiper-pagination-bullet-inactive-color);
+  width: 1rem;
+  height: 0.5rem;
+  border-radius: .5rem;
+}
+:global(.swiper-pagination-bullet-active)  {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
+:global(.swiper-button-next) {
+  color: var(--swiper-navigation-color);
+}
+:global(.swiper-button-prev) {
+  color: var(--swiper-navigation-color);
+}
 </style>

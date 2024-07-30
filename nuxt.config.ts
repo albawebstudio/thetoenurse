@@ -18,7 +18,8 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/google-fonts",
     "@nuxt/image",
-    "@nuxt/content"
+    "@nuxt/content",
+    "nuxt-swiper",
   ],
 
   image: {
