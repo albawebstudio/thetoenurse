@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Testimonial from "~/components/default/Testimonial.vue";
+import Testimonial from "~/components/Testimonial.vue";
 const testimonials = ref([
   {
     "id": 1,
@@ -73,7 +73,7 @@ const modules = [Pagination, Navigation, EffectFade];
             disableOnInteraction: true,
           }"
           :autoHeight="true"
-          class="w-2/3"
+          class="w-full md:w-2/3"
       >
         <SwiperSlide v-for="testimonial in testimonials" :key="testimonial.id">
           <Testimonial :testimonial="testimonial" />
