@@ -28,7 +28,7 @@ const ratingToInt = () => {
         {{ testimonial.content }}
       </p>
     </div>
-    <div class="flex items-center gap-5 border-t border-solid border-gray-200 py-5">
+    <div class="flex items-center gap-5 border-t border-solid border-gray-200 py-5 mb-6">
       <NuxtImg :src="'/testimonial-images/' + testimonial.image"
                :alt="testimonial.author"
                class="rounded-full h-10 w-10" />
