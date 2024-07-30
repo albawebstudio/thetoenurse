@@ -7,8 +7,8 @@ const { services } = useServices()
 
 <template>
   <section id="services" class="bg-white dark:bg-black p-8">
-    <div class="px-2">
-      <div class="flex flex-wrap mx-4">
+    <div>
+      <div class="flex flex-wrap">
         <div v-for="service in services" :key="service.slug" class="w-full p-0 lg:w-1/2 lg:p-8 lg:space-x-4">
           <Service :service="service" />
         </div>

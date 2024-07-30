@@ -13,7 +13,7 @@ const ratingToInt = () => {
 <template>
   <div class="group bg-white border border-solid border-gray-300 rounded-xl px-16 w-full hover:shadow-sm">
     <div class="">
-      <div class="flex items-center my-6  text-amber-500">
+      <div class="flex items-center my-6 text-amber-500">
         <div v-for="count in ratingToInt()">
           <svg class="w-5 h-5" viewBox="0 0 18 17" fill="none"
                xmlns="http://www.w3.org/2000/svg">

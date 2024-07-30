@@ -42,7 +42,7 @@ const modules = [Pagination, Navigation, EffectFade];
             disableOnInteraction: true,
           }"
           :autoHeight="true"
-          class="w-full md:w-2/3"
+          class="w-full md:w-4/5 lg:w-2/3"
       >
         <SwiperSlide v-for="testimonial in testimonials" :key="testimonial.id">
           <Testimonial :testimonial="testimonial" />
